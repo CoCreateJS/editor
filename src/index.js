@@ -83,6 +83,11 @@ async function formatLanguage(element) {
     return state.promise;
 }
 
+/**
+ *
+ * @public
+ * @environment client
+ */
 export async function initLanguage(root = globalThis.document) {
     if (!root) return [];
     const elements = new Set();
@@ -105,6 +110,11 @@ function loadInputBinding() {
     return inputBindingPromise;
 }
 
+/**
+ *
+ * @public
+ * @environment client
+ */
 export function loadParser(type) {
     const loader = parserLoaders[type];
     if (!loader) return Promise.reject(new TypeError(`Unknown editor parser: ${type}`));
@@ -125,11 +135,36 @@ function callRuntime(name, args) {
     });
 }
 
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseDOM = async source => (await loadParser("dom")).default(source);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseMarkdown = async source => (await loadParser("markdown")).default(source);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseCode = async (source, language) => (await loadParser("code")).parseCode(source, language);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const autoLanguageDetection = async source => (await loadParser("code")).autoLanguageDetection(source);
 
+/**
+ *
+ * @public
+ * @environment client
+ */
 export async function init(root = globalThis.document) {
     const editors = await callRuntime("init", [root]);
     if (root?.matches?.(bindingSelector) || root?.querySelector?.(bindingSelector))
@@ -137,34 +172,179 @@ export async function init(root = globalThis.document) {
     await initLanguage(root);
     return editors;
 }
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const initElements = (...args) => callRuntime("initElements", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const initElement = (...args) => callRuntime("initElement", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createEditorCore = (...args) => callRuntime("createEditorCore", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createCore = createEditorCore;
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createEditorEvents = (...args) => callRuntime("createEditorEvents", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const bindEditorInput = (...args) => callRuntime("bindEditorInput", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const getSelection = (...args) => callRuntime("getSelection", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const setSelection = (...args) => callRuntime("setSelection", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const textChange = (...args) => callRuntime("textChange", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const initEditorInput = (...args) => callRuntime("initEditorInput", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const uninitEditorInput = (...args) => callRuntime("uninitEditorInput", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const initEditorQuery = (...args) => callRuntime("initEditorQuery", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const uninitEditorQuery = (...args) => callRuntime("uninitEditorQuery", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const destroyEditor = (...args) => callRuntime("destroyEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const sendPosition = (...args) => callRuntime("sendPosition", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const updateText = (...args) => callRuntime("updateText", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const updateElement = (...args) => callRuntime("updateElement", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const loadEditor = (...args) => callRuntime("loadEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createTextEditor = (...args) => callRuntime("createTextEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createDOMEditor = (...args) => callRuntime("createDOMEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createMarkdownEditor = (...args) => callRuntime("createMarkdownEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const createCodeEditor = (...args) => callRuntime("createCodeEditor", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseAndStoreEditorDetails = (...args) => callRuntime("parseAndStoreEditorDetails", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseAndStoreMarkdownDetails = (...args) => callRuntime("parseAndStoreMarkdownDetails", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const parseAndStoreCodeDetails = (...args) => callRuntime("parseAndStoreCodeDetails", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const updateStoredEditorDetails = (...args) => callRuntime("updateStoredEditorDetails", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const getStoredEditorDetails = editor => runtimeModule?.default?.getStoredEditorDetails?.(editor);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export const deleteStoredEditorDetails = (...args) => callRuntime("deleteStoredEditorDetails", args);
+/**
+ *
+ * @public
+ * @environment client
+ */
 export { lengthEditorDetails };
 
 function reportError(element, error) {
@@ -246,3 +426,85 @@ if (typeof document !== "undefined")
     void initLanguage(document).catch(error => console.error("CoCreate language formatting failed", error));
 
 export default editor;
+
+/**
+ *
+ * @name contenteditable
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name crdt
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name editor
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name editor-attribute
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name editor-property
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name editor-query
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ *
+ * @name language
+ * @kind member
+ * @attribute
+ * @environment client
+ */
+
+/**
+ * Extensible collaborative editor for text, HTML/DOM, Markdown, and code with syntax highlighting and optional CRDT sync.
+ *
+ * @module editor
+ * @environment client
+ */
+
+/**
+ * Declarative selectors recognized by this module.
+ *
+ * @name declarative-selectors
+ * @kind member
+ * @selectors
+ * @environment client
+ * @example
+ * ```json
+ * [
+ *   "code",
+ *   ":is([editor], [contenteditable], input[crdt='true'], textarea[crdt='true']):not([contenteditable='false']):not([editor-query])",
+ *   "[editor-query], [editor-attribute], [editor-property]",
+ *   "${editorSelector}, ${bindingSelector}",
+ *   "code[language]"
+ * ]
+ * ```
+ */
