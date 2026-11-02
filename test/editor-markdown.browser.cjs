@@ -221,7 +221,7 @@ test('README Markdown renders its headings, links, images, table, and code block
             unorderedLists: editor.querySelectorAll('ul').length,
             orderedLists: editor.querySelectorAll('ol').length,
             fencedCode: [...editor.querySelectorAll('pre code')].map(node => node.textContent),
-            visibleMarkdownLinks: editor.textContent.includes('[CoCreateWS]')
+            visibleMarkdownLinks: editor.textContent.includes('[CoCreate Server]')
         }));
         assert.equal(result.source, readme);
         assert.ok(result.headings.includes('CoCreateJS'));
@@ -300,7 +300,7 @@ test('fenced diagrams preserve significant spaces and line breaks', async () => 
         '       Local browser state             HTTP + WebSockets',
         '    IndexedDB · cache · PWA                    |',
         '                                                v',
-        '                                           CoCreateWS',
+        '                                           CoCreate Server',
         '                              CRUD · APIs · auth · files · realtime',
         '                                                |',
         '                              Databases · services · infrastructure'

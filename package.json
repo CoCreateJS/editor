@@ -35,7 +35,7 @@
   "homepage": "https://CoCreateJS.com/docs/editor",
   "funding": {
     "type": "GitHub Sponsors \u2764",
-    "url": "https://github.com/sponsors/CoCreate-app"
+    "url": "https://github.com/sponsors/CoCreateJS"
   },
   "type": "module",
   "main": "./src/index.js",
@@ -51,9 +51,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreateJS/CoCreate-editor.git"
+    "url": "git+https://github.com/CoCreateJS/editor.git"
   },
   "bugs": {
-    "url": "https://github.com/CoCreateJS/CoCreate-editor/issues"
+    "url": "https://github.com/CoCreateJS/editor/issues"
   }
 }

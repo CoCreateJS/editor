@@ -1,6 +1,6 @@
 # CoCreateJS
 
-[![npm](https://img.shields.io/npm/v/@cocreate/cocreatejs?style=flat-square)](https://www.npmjs.com/package/@cocreate/cocreatejs)
+[![npm](https://img.shields.io/npm/v/@cocreate/client?style=flat-square)](https://www.npmjs.com/package/@cocreate/client)
 [![GitHub release](https://img.shields.io/github/v/release/CoCreate-app/CoCreateJS?style=flat-square)](https://github.com/CoCreateJS/CoCreateJS/releases)
 [![License](https://img.shields.io/github/license/CoCreate-app/CoCreateJS?style=flat-square)](./LICENSE)
 
@@ -8,11 +8,11 @@ An open-source, modular JavaScript runtime for building realtime, offline-first,
 
 CoCreateJS gives standard HTML a direct connection to data, actions, APIs, sockets, storage, components, and third-party plugins. Start with a few attributes, use the same capabilities programmatically, or combine them with the framework and architecture you already have.
 
-This repository contains `@cocreate/cocreatejs`, the optional browser-side runtime. It works especially well with [CoCreateWS](https://github.com/CoCreateJS/CoCreateWS), the scalable server runtime behind the wider CoCreate ecosystem, but neither side locks you into the other.
+This repository contains `@cocreate/client`, the optional browser-side runtime. It works especially well with [CoCreate Server](https://github.com/CoCreateJS/CoCreate-server), the scalable server runtime behind the wider CoCreate ecosystem, but neither side locks you into the other.
 
 ![CoCreateJS](./CoCreateJS.png)
 
-## Build from HTML. Control it from JavaScript. Scale it on CoCreateWS.
+## Build from HTML. Control it from JavaScript. Scale it on CoCreate Server.
 
 CoCreateJS is not a replacement syntax for HTML and it is not a closed application framework. Its attributes are a declarative interface over focused JavaScript modules. The same modules can be used headlessly, extended through plugins, or integrated into an existing application.
 
@@ -27,7 +27,7 @@ Declarative HTML     Headless JavaScript     Existing Frameworks
        Local browser state             HTTP + WebSockets
     IndexedDB · cache · PWA                    |
                                                 v
-                                           CoCreateWS
+                                           CoCreate Server
                               CRUD · APIs · auth · files · realtime
                                                 |
                               Databases · services · infrastructure
@@ -199,15 +199,15 @@ Use CoCreateJS in whichever form fits the application:
 - Individual packages imported into a JavaScript application
 - A declarative UI backed by headless modules
 - A data and realtime layer beneath React, Vue, Svelte, Web Components, or another renderer
-- A client for CoCreateWS or a compatible custom backend
+- A client for CoCreate Server or a compatible custom backend
 
 The server does not require the CoCreateJS client, and the client does not require a particular UI framework. HTTP, WebSockets, structured payloads, and standard browser APIs remain the boundaries.
 
-## Scale with CoCreateWS
+## Scale with CoCreate Server
 
-[CoCreateWS](https://github.com/CoCreateJS/CoCreateWS) is the server-side runtime for applications that need the full CoCreate infrastructure model. It brings the client's data, socket, API, file, authentication, and authorization conventions into a modular server environment.
+[CoCreate Server](https://github.com/CoCreateJS/CoCreate-server) is the server-side runtime for applications that need the full CoCreate infrastructure model. It brings the client's data, socket, API, file, authentication, and authorization conventions into a modular server environment.
 
-An application can begin with a single deployment and grow into distributed infrastructure without changing how the client describes its data or messages. CoCreateWS is designed for:
+An application can begin with a single deployment and grow into distributed infrastructure without changing how the client describes its data or messages. CoCreate Server is designed for:
 
 - Multi-tenant applications and organization-isolated data
 - Realtime WebSocket workloads
@@ -218,26 +218,26 @@ An application can begin with a single deployment and grow into distributed infr
 - Worker processes, server coordination, and autoscaling
 - Distributed deployments across machines, regions, and infrastructure providers
 
-CoCreateJS remains the browser runtime; CoCreateWS owns server execution and infrastructure. Together they provide an end-to-end system, while their protocol boundaries allow either side to be replaced or used independently.
+CoCreateJS remains the browser runtime; CoCreate Server owns server execution and infrastructure. Together they provide an end-to-end system, while their protocol boundaries allow either side to be replaced or used independently.
 
 ## Installation
 
 Install the complete client runtime:
 
 ```sh
-npm install @cocreate/cocreatejs
+npm install @cocreate/client
 ```
 
 Or with Yarn:
 
 ```sh
-yarn add @cocreate/cocreatejs
+yarn add @cocreate/client
 ```
 
 Import it as a browser-side dependency:
 
 ```js
-import "@cocreate/cocreatejs";
+import "@cocreate/client";
 ```
 
 You can also load a built bundle directly:
@@ -276,7 +276,7 @@ The generated browser bundle is written to `src/dist`.
 - [CoCreateJS documentation](https://cocreatejs.com/docs/)
 - [Repository documentation](./docs/)
 - [Demo source](./demo/)
-- [CoCreateWS](https://github.com/CoCreateJS/CoCreateWS)
+- [CoCreate Server](https://github.com/CoCreateJS/CoCreate-server)
 - [Changelog](./CHANGELOG.md)
 - [Releases](https://github.com/CoCreateJS/CoCreateJS/releases)
 
