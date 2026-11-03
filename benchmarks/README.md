@@ -6,11 +6,11 @@ Run the generated fixture benchmark from the repository root:
 CHROMIUM_PATH=/path/to/chrome node benchmarks/editor-dom-parse.cjs > benchmarks/editor-dom-parse.results.json
 ```
 
-Pass a real HTML file to benchmark that source with content and attribute
-edits:
+Optionally pass a real HTML file to benchmark that source with content and
+attribute edits:
 
 ```sh
-CHROMIUM_PATH=/path/to/chrome node benchmarks/editor-dom-parse.cjs test/builder.html > benchmarks/editor-dom-builder.results.json
+CHROMIUM_PATH=/path/to/chrome node benchmarks/editor-dom-parse.cjs <path-to-html-file> > benchmarks/editor-dom-file.results.json
 ```
 
 This measures the editor `parseDOM` and its real editor-detail
@@ -67,13 +67,3 @@ Large outliers are included rather than discarded. This run does not profile
 their causes. Record density and hardware matter, so these are not universal
 document-size limits. A preliminary run with validation between measured
 samples gave similar medians; the retained results exclude that extra workload.
-
-## Builder document
-
-The repository's `test/builder.html` source is 376,347 UTF-8 bytes and 376,324
-JavaScript characters. It parses into 28,486 details, including 2,763 elements.
-In Chromium 153 on the same machine, 60 full parses after text and quoted
-attribute edits measured 74.0 ms median, 153.6 ms p95, and 1,545.9 ms maximum.
-The first parse measured 141.7 ms. The detailed samples are in
-`editor-dom-builder.results.json`. The parser reconstructed the original source
-exactly, and the benchmark checked the edited source variants before timing.
