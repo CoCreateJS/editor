@@ -77,7 +77,7 @@ The HTML remains understandable without the runtime: `array` identifies the data
 The CRUD client uses self-contained payloads instead of database-specific calls. The storage adapter determines where the operation runs, while the application keeps the same object shape.
 
 ```js
-import crud from "@cocreate/crud-client";
+import { crudClient as crud } from "@cocreate/crud/client";
 
 const result = await crud.send({
     method: "object.read",
