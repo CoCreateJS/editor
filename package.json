@@ -40,13 +40,13 @@
   "type": "module",
   "main": "./src/index.js",
   "dependencies": {
-    "@cocreate/element-prototype": "^2.0.0",
-    "@cocreate/observer": "^2.0.0",
-    "@cocreate/crdt": "^2.0.0",
-    "@cocreate/utils": "^2.0.0"
+    "@cocreate/element-prototype": "^2.0.1",
+    "@cocreate/observer": "^2.0.1",
+    "@cocreate/crdt": "^2.0.1",
+    "@cocreate/utils": "^2.0.2"
   },
   "devDependencies": {
-    "@cocreate/webpack": "^2.0.0",
+    "@cocreate/webpack": "^2.0.1",
     "playwright-core": "^1.64.1"
   },
   "repository": {
