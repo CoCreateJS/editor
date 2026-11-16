@@ -8,7 +8,7 @@ An open-source, modular JavaScript runtime for building realtime, offline-first,
 
 CoCreateJS gives standard HTML a direct connection to data, actions, APIs, sockets, storage, components, and third-party plugins. Start with a few attributes, use the same capabilities programmatically, or combine them with the framework and architecture you already have.
 
-This repository contains `@cocreate/client`, the optional browser-side runtime. It works especially well with [CoCreate Server](https://github.com/CoCreateJS/CoCreate-server), the scalable server runtime behind the wider CoCreate ecosystem, but neither side locks you into the other.
+This repository contains `@cocreate/client`, the optional browser-side runtime. It works especially well with [CoCreate Server](https://github.com/CoCreateJS/server), the scalable server runtime behind the wider CoCreate ecosystem, but neither side locks you into the other.
 
 ![CoCreateJS](./CoCreateJS.png)
 
@@ -205,7 +205,7 @@ The server does not require the CoCreateJS client, and the client does not requi
 
 ## Scale with CoCreate Server
 
-[CoCreate Server](https://github.com/CoCreateJS/CoCreate-server) is the server-side runtime for applications that need the full CoCreate infrastructure model. It brings the client's data, socket, API, file, authentication, and authorization conventions into a modular server environment.
+[CoCreate Server](https://github.com/CoCreateJS/server) is the server-side runtime for applications that need the full CoCreate infrastructure model. It brings the client's data, socket, API, file, authentication, and authorization conventions into a modular server environment.
 
 An application can begin with a single deployment and grow into distributed infrastructure without changing how the client describes its data or messages. CoCreate Server is designed for:
 
@@ -276,7 +276,7 @@ The generated browser bundle is written to `src/dist`.
 - [CoCreateJS documentation](https://cocreatejs.com/docs/)
 - [Repository documentation](./docs/)
 - [Demo source](./demo/)
-- [CoCreate Server](https://github.com/CoCreateJS/CoCreate-server)
+- [CoCreate Server](https://github.com/CoCreateJS/server)
 - [Changelog](./CHANGELOG.md)
 - [Releases](https://github.com/CoCreateJS/CoCreateJS/releases)
 
